@@ -17,7 +17,7 @@ db.once('open' , ()=>{console.log("Conneced to MongoDB Atlas Successfully");});
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions ={
-    origin:['http://localhost:3000' , 'https://mern-auth-krushna.netlify.app' , 'https://mern-auth-tut.web.app/'], 
+    origin:['http://localhost:3000' , 'https://mern-auth-tut.web.app/'], 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
