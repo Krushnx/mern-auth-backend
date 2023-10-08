@@ -60,7 +60,9 @@ router.post("/", async (req, res) => {
     // Send the token in a HTTP-only cookie
 
     res.cookie("token" , token , {
-      httpOnly:true
+      httpOnly:true,
+      secure:true,
+      sameSite:"none"
     }).send();
 
 
@@ -107,7 +109,9 @@ router.post("/login" , async (req , res)=>
     // Send the token in a HTTP-only cookie
 
     res.cookie("token" , token , {
-      httpOnly:true
+      httpOnly:true,
+      secure:true,
+      sameSite:"none"
     }).send();
 
 
@@ -121,7 +125,9 @@ router.post("/login" , async (req , res)=>
 
 // Logout
 router.get("/logout" , (req , res)=>{
-  res.cookie("token" , "" , {httpOnly:true,expires : new Date(0)}).send();
+  res.cookie("token" , "" , {httpOnly:true,
+    secure:true,
+    sameSite:"none" , expires : new Date(0)}).send();
 })
 
 
