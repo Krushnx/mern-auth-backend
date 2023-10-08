@@ -21,7 +21,9 @@ app.use(cors());
 
 app.use("/auth" , require('./routes/userRoutes'));
 app.use('/customer' , require('./routes/customerRoutes'))
-
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+  })
 app.listen(PORT, ()=>{
     console.log(`App listed on port http://localhost:8000`);
 });
