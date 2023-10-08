@@ -16,7 +16,7 @@ db.on('error' , (error)=>{console.log(error);});
 db.once('open' , ()=>{console.log("Conneced to MongoDB Atlas Successfully");});
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: '*', credentials: true }));
 //set up route
 
 app.use("/auth" , require('./routes/userRoutes'));
